@@ -1,9 +1,9 @@
 ---
 name: design-lab
-description: Design Lab - bộ quy trình + mẫu HTML/CSS để thiết kế ấn phẩm theo đúng thương hiệu — ảnh social (bài 1 ảnh, carousel, album, story/reels), ảnh quảng cáo Meta có CTA, ảnh bìa fanpage, poster, flyer, tờ rơi A4/A5, danh thiếp, banner, slide — render PNG bằng Chrome headless và lưu version bằng git. Đa thương hiệu, mỗi thương hiệu có một brand pack (DNA thương hiệu) trong brands/. DÙNG SKILL NÀY mỗi khi người dùng muốn thiết kế ấn phẩm, làm ảnh post, ảnh quảng cáo, carousel, ảnh bìa, poster, flyer theo thương hiệu; đổi khổ 1:1/4:5/9:16; thêm nút CTA; khôi phục version ảnh; kiểm tra ảnh có đúng nhận diện không; tạo bộ nhận diện thiết kế cho thương hiệu mới; hoặc cài brand pack riêng (.zip) của một đội. Việc đầu tiên luôn là xác định thương hiệu - có brands/ten-brand thì theo đúng brand.md; chưa có thì cài brand pack riêng (scripts/nap_tu_lieu.py) hoặc tạo mới từ brands/_mau (references/tao-brand-moi.md).
+description: Design Lab — skill thiết kế ấn phẩm thương hiệu. Xây Brand DNA & hệ thị giác (khai thác visual có sẵn hoặc xây từ đầu, brand board) rồi thiết kế ấn phẩm đúng thương hiệu bằng HTML/CSS → PNG (Chrome headless), lưu version bằng git: ảnh social (1 ảnh, carousel, album, story/reels), quảng cáo Meta có CTA, ảnh bìa fanpage, poster, flyer, danh thiếp, banner, slide. Đa thương hiệu, mỗi thương hiệu một brand pack trong brands/. DÙNG khi người dùng muốn thiết kế ấn phẩm/ảnh post/ảnh quảng cáo/carousel/ảnh bìa theo thương hiệu; đổi khổ 1:1/4:5/9:16; thêm CTA; khôi phục version; kiểm tra đúng nhận diện; xây brand DNA, bảng màu, cặp font, brand board; khai thác/chuẩn hóa visual từ logo, bài cũ, website; cài brand pack riêng (.zip). Luôn xác định thương hiệu trước: có brands/<brand> thì theo brand.md; chưa có thì cài pack (scripts/nap_tu_lieu.py) hoặc xây DNA (references/xay-dung-brand-dna.md).
 ---
 
-# Design Lab — thiết kế ấn phẩm theo thương hiệu
+# Design Lab — skill thiết kế ấn phẩm thương hiệu
 
 Mỗi ấn phẩm = một file HTML/CSS → render PNG bằng Chrome headless → mỗi lần sửa là một version git khôi phục được. Skill tách làm hai lớp:
 - **Chung** (mọi thương hiệu): quy trình, kích thước, nguyên tắc thiết kế, CSS thành phần `core/core.css`, script.
@@ -22,14 +22,17 @@ references/
   quy-trinh.md               brief → khổ → mẫu → xem nhanh → render/version → QC → xuất
   kich-thuoc-an-pham.md      khổ & vùng an toàn: FB/IG, story, quảng cáo, ảnh bìa, slide, in ấn
   nguyen-tac-thiet-ke.md     phân cấp, chữ, màu, ảnh người thật, CTA, carousel + checklist QC chung
+  xay-dung-brand-dna.md      XÂY BRAND DNA & HỆ THỊ GIÁC: A. khai thác visual có sẵn (audit) · B. xây từ đầu
+                             (phỏng vấn lõi, thang tính cách, 3 hướng thị giác) · cặp font tiếng Việt · brand board
   tao-brand-moi.md           tạo brand pack mới; đóng gói & chia sẻ brand pack riêng (.zip)
   cong-cu-anh.md             preview/render, xóa chữ (LaMa), tách nền (rembg), cân sáng
 core/core.css                thành phần dùng chung chạy bằng biến CSS: thẻ, chip, nút CTA, tên hai màu .wt,
                              ảnh thật + lớp phủ, thẻ thông tin (lưới 2×2), lower-third, khối ảnh đầu carousel
 scripts/                     khoi-tao-du-an.sh --brand · preview.sh · render-social.sh · khoi-phuc.sh ·
-                             nap_tu_lieu.py (cài brand pack / gói ảnh) · xoa_chu_anh.py · tach_nen.py
+                             nap_tu_lieu.py (cài brand pack / gói ảnh) ·
+                             trich_xuat_brand.py (trích bảng màu, vai trò màu, tương phản → brand-audit.md + tokens gợi ý) · xoa_chu_anh.py · tach_nen.py
 brands/
-  _mau/                      brand pack khởi đầu (brand.md để điền, tokens trung tính, 7 mẫu theo kiểu nội dung)
+  _mau/                      brand pack khởi đầu (brand.md để điền, tokens trung tính, brand-board + 7 mẫu theo kiểu nội dung)
   <brand>/                   brand pack riêng của đội (cài từ .zip, không commit)
 ```
 
@@ -39,7 +42,10 @@ brands/
 3. **Chưa có pack, nhưng đội đã có brand pack riêng (.zip / thư mục)** → cài trước:
    `python scripts/nap_tu_lieu.py --brand <tên> <file .zip hoặc thư mục>`
    Script cài cả pack vào `brands/<tên>/` và báo mẫu nào còn thiếu ảnh. Hỏi người dùng đường dẫn file nếu họ nhắc tới pack mà chưa cài.
-4. **Chưa có pack nào** → làm theo `references/tao-brand-moi.md`: rút DNA từ tài liệu người dùng đưa (logo, guideline, ấn phẩm cũ) hoặc hỏi một lượt ngắn (tên ghi thế nào, người xem, màu/font/logo, nhân vật, điều cấm, điều không thích). Tạo `brands/<brand>/` từ `_mau`, render thử, cho duyệt — rồi mới làm ấn phẩm thật.
+4. **Chưa có pack nào** → xây Brand DNA trước, theo `references/xay-dung-brand-dna.md`:
+   - Có logo / bài đăng cũ / website → **Lộ trình A (khai thác visual)**: gom tư liệu, chạy `python scripts/trich_xuat_brand.py <thư mục tư liệu> --logo <logo> --out brands/<brand>` (ra `brand-audit.md` + `tokens-goi-y.css`), phân tích bằng mắt, chốt bảng Giữ – Chuẩn hóa – Bỏ.
+   - Chưa có gì / muốn làm lại → **Lộ trình B (xây từ đầu)**: phỏng vấn lõi 8 câu (một lượt), chấm thang tính cách, dịch tính cách → màu/chữ/bố cục/ảnh, đề xuất 3 hướng (an toàn – cân bằng – táo bạo) bằng ảnh render để người dùng chọn.
+   - Cả hai: tạo `brands/<brand>/` từ `_mau` (`references/tao-brand-moi.md`), điền `brand.md` (mục 0 DNA lõi → 9), `tokens.css`, render **brand board** (`templates/brand-board.html`, 1920×1080) + 3 mẫu đầu → chủ thương hiệu duyệt → rồi mới làm ấn phẩm thật.
 5. Không rõ thương hiệu → hỏi. Không tự áp DNA của thương hiệu này cho thương hiệu khác.
 
 ## Bước 1 — Brief

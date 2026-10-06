@@ -17,6 +17,8 @@ brands/<ten-brand>/
 ```
 
 ## 2. Lấy thông tin — hỏi ít, hỏi đúng
+> Quy trình đầy đủ (khai thác visual có sẵn hoặc xây Brand DNA từ đầu, 3 hướng thị giác, brand board): **`references/xay-dung-brand-dna.md`**. Mục này là bản rút gọn khi thương hiệu đã rõ DNA.
+
 Ưu tiên rút ra từ tài liệu người dùng đưa (brand guideline, logo, ảnh bài đăng cũ, website, ấn phẩm họ thích). Chỉ hỏi những gì không suy ra được. Bộ câu hỏi tối thiểu (gộp vào 1 tin nhắn):
 1. Tên thương hiệu ghi thế nào trên ấn phẩm (đủ tên / viết tắt / viết hoa)? Tagline?
 2. Ai xem ấn phẩm, xem ở đâu (điện thoại, in, màn hình)?

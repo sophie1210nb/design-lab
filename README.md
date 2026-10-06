@@ -1,12 +1,21 @@
-# Design Lab — skill thiết kế ấn phẩm đa thương hiệu
+# Design Lab — skill thiết kế ấn phẩm thương hiệu
 
-Skill cho Claude Code để **tự thiết kế ấn phẩm theo đúng thương hiệu của mình**: ảnh bài đăng (1:1, 4:5, 9:16), carousel/album, ảnh quảng cáo Meta có nút CTA, ảnh bìa fanpage, poster, flyer A4/A5, danh thiếp, banner, slide.
+Skill cho Claude Code để **xây dựng Brand DNA & hệ thị giác** cho thương hiệu của bạn, rồi **tự thiết kế ấn phẩm theo đúng thương hiệu đó**: ảnh bài đăng (1:1, 4:5, 9:16), carousel/album, ảnh quảng cáo Meta có nút CTA, ảnh bìa fanpage, poster, flyer A4/A5, danh thiếp, banner, slide.
 
 Mỗi ấn phẩm là một file HTML/CSS → render PNG bằng Chrome headless → lưu version bằng git (khôi phục được mọi bản cũ).
 
 Đây là **repo chung, không gắn thương hiệu nào**: phần quy trình, kích thước, nguyên tắc và CSS thành phần dùng cho mọi thương hiệu. Mỗi đội / mỗi khách có một **brand pack** riêng — "DNA thương hiệu thiết kế" để cả đội cùng theo. Repo chỉ có khung `brands/_mau/`; brand pack thật được chia sẻ riêng dưới dạng file .zip.
 
-Phiên bản: **v1.0.0** (06/10/2026) — xem `CHANGELOG.md`.
+Phiên bản: **v1.1.0** (06/10/2026) — xem `CHANGELOG.md`.
+
+## Xây Brand DNA & hệ thị giác
+`references/xay-dung-brand-dna.md` — chưa có bộ nhận diện rõ ràng? Skill đi cùng bạn theo một trong hai lộ trình:
+- **A. Khai thác visual có sẵn (brand audit)**: đưa logo, bài đăng cũ, ảnh chụp website → `scripts/trich_xuat_brand.py` trích bảng màu, gợi ý vai trò màu (nền 60 – phụ 30 – nhấn 10), kiểm tra tương phản, đo độ đồng nhất giữa các ấn phẩm → `brand-audit.md` + `tokens-goi-y.css`; Claude phân tích chữ, bố cục, ảnh, chỗ bất nhất và chốt bảng **Giữ – Chuẩn hóa – Bỏ**.
+  ```bash
+  python scripts/trich_xuat_brand.py <thư mục ảnh> --logo <logo.png> --out brands/<ten-brand>
+  ```
+- **B. Xây từ đầu**: phỏng vấn lõi thương hiệu (8 câu, một lượt) → thang tính cách (cổ điển ↔ hiện đại, sang ↔ gần gũi…) → bảng dịch tính cách sang màu, chữ, bố cục, ảnh → **3 hướng thị giác** (an toàn – cân bằng – táo bạo) render thành ảnh để chọn.
+- Đầu ra: `brand.md` (DNA lõi + quy tắc), `tokens.css`, **brand board** 1920×1080 (`templates/brand-board.html` — tự hiện màu, HEX, font, chuỗi thử dấu tiếng Việt, nút CTA, thẻ) và 3 mẫu đầu tiên đã duyệt. Kèm bảng cặp font Google có tiếng Việt và checklist chốt DNA.
 
 ## Điểm mạnh nhất: Bộ quy tắc thiết kế social post
 `references/quy-tac-social-post.md` — bộ quy tắc thực hành, có số đo cụ thể, không gắn thương hiệu, Claude đọc cho mọi ảnh social/quảng cáo:
@@ -18,7 +27,7 @@ Phiên bản: **v1.0.0** (06/10/2026) — xem `CHANGELOG.md`.
 - **15 mẫu nội dung**: trích dẫn, thông báo, sự kiện, FAQ, trước/sau, danh sách, con số, testimonial, so sánh, timeline, đếm ngược, thẻ sản phẩm…; **carousel**; **nút CTA**; **quảng cáo Meta** (sáng tạo là nhắm chọn, 3 khổ, primary text, thử biến thể, chính sách); **accessibility**; **hệ thống nhất quán**.
 - **Checklist QC 31 mục** trước khi xuất và **20 lỗi thường gặp**.
 
-Mẫu minh họa chạy được trong `brands/_mau/templates/`: `post-4x5`, `event-4x5`, `quote-1x1`, `carousel-01-1x1` + `carousel-02-1x1`, `story-9x16` (có lưới vùng an toàn), `ad-cta-4x5`.
+Mẫu minh họa chạy được trong `brands/_mau/templates/`: `brand-board` (bảng nhận diện 16:9), `post-4x5`, `event-4x5`, `quote-1x1`, `carousel-01-1x1` + `carousel-02-1x1`, `story-9x16` (có lưới vùng an toàn), `ad-cta-4x5`.
 
 ## Cài đặt
 **Cách 1 — clone repo** (dễ cập nhật):

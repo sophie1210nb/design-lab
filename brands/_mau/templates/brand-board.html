@@ -1,0 +1,95 @@
+<meta charset="utf-8">
+<title>Brand board · 16:9</title>
+<!-- Bảng nhận diện (references/xay-dung-brand-dna.md mục 4.2): trang duyệt DNA thị giác TRƯỚC khi làm ấn phẩm.
+     Tự đọc màu/font từ ../tokens.css (mã HEX tự hiện). Sửa các ô [ ] rồi render:
+     bash scripts/preview.sh brands/<ten-brand>/templates/brand-board.html 1920 1080
+     So sánh nhiều hướng: đổi dòng link tokens thành ../tokens-huong-1.css, -2, -3 và render từng bản. -->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../../core/core.css">
+<style>
+.sheet.bb{width:1920px;height:1080px;display:grid;grid-template-columns:560px 1fr;gap:0}
+.bb .side{position:relative;padding:72px 64px;display:flex;flex-direction:column;gap:28px;
+  background:var(--bg-solid);border-right:1px solid var(--hairline)}
+.bb .main{position:relative;padding:64px 72px;display:grid;grid-template-rows:auto auto 1fr;gap:40px}
+.bb h1{font-family:var(--font-display);font-weight:700;font-size:64px;line-height:1.05;color:var(--text-strong)}
+.bb .pos{font-size:22px;line-height:1.5;color:var(--text)}
+.bb .adj{display:flex;flex-wrap:wrap;gap:10px}
+.bb .adj span{font-size:17px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 16px;border-radius:999px;
+  border:1px solid var(--accent-soft);color:var(--accent-soft)}
+.bb .adj span.no{border-style:dashed;color:var(--text-muted);border-color:var(--text-muted);text-decoration:line-through}
+.bb .logos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:auto}
+.bb .logos div{height:150px;border-radius:var(--radius);display:grid;place-items:center;border:1px solid var(--surface-border)}
+.bb .logos .l1{background:#FFFFFF} .bb .logos .l2{background:#0E1320}
+.bb .logos img{max-width:70%;max-height:64px}
+.bb .logos .l2 img{filter:brightness(0) invert(1)}
+.bb .h{font-size:15px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px}
+.bb .pal{display:grid;grid-template-columns:3fr 2fr 1fr 1fr 1fr;gap:14px;height:210px}
+.bb .sw{border-radius:var(--radius);border:1px solid var(--surface-border);display:flex;flex-direction:column;justify-content:flex-end;padding:16px;font-size:15px;line-height:1.35}
+.bb .sw b{display:block;font-size:17px}
+.bb .sw code{font-family:ui-monospace,Consolas,monospace;font-size:15px;opacity:.85}
+.bb .type{display:grid;grid-template-columns:1.1fr 1fr;gap:48px}
+.bb .aa{font-family:var(--font-display);font-weight:700;font-size:150px;line-height:.9;color:var(--text-strong)}
+.bb .fn{font-size:18px;color:var(--text-muted);margin-top:10px}
+.bb .scale p{color:var(--text-strong);line-height:1.15;margin-bottom:12px}
+.bb .scale .s1{font-family:var(--font-display);font-weight:700;font-size:56px}
+.bb .scale .s2{font-family:var(--font-display);font-weight:600;font-size:36px}
+.bb .scale .s3{font-size:26px;font-weight:500;color:var(--text)}
+.bb .scale .s4{font-size:17px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-soft)}
+.bb .dau{font-size:24px;color:var(--text);margin-top:6px}
+.bb .comp{display:flex;align-items:center;gap:36px}
+.bb .comp .card{padding:26px 30px;width:440px}
+.bb .comp .card p{font-size:22px;line-height:1.45;color:var(--text)}
+.bb .comp .card b{color:var(--accent-soft)}
+</style>
+<div class="sheet bb">
+  <aside class="side">
+    <img class="logo" src="../assets/logo-mau.svg" alt="Logo" style="--logo-h:58px">
+    <h1>[Tên thương hiệu]</h1>
+    <p class="pos">[Một câu định vị: giúp ai, làm gì, khác biệt ở đâu.]</p>
+    <div>
+      <div class="h">Tính cách</div>
+      <div class="adj"><span>[tính từ 1]</span><span>[tính từ 2]</span><span>[tính từ 3]</span><span class="no">[không bao giờ là]</span></div>
+    </div>
+    <div class="logos"><div class="l1"><img src="../assets/logo-mau.svg" alt=""></div><div class="l2"><img src="../assets/logo-mau.svg" alt=""></div></div>
+  </aside>
+  <main class="main">
+    <section>
+      <div class="h">Màu · 60 – 30 – 10</div>
+      <div class="pal">
+        <div class="sw" data-v="--bg-solid" style="background:var(--bg-solid);color:var(--text-strong)"><b>Nền · 60%</b><code></code></div>
+        <div class="sw" data-v="--c-phu" style="background:var(--c-phu,var(--surface));color:var(--text-strong)"><b>Phụ · 30%</b><code></code></div>
+        <div class="sw" data-v="--accent" style="background:var(--accent);color:var(--on-accent)"><b>Nhấn · 10%</b><code></code></div>
+        <div class="sw" data-v="--text-strong" style="background:var(--text-strong);color:var(--bg-solid)"><b>Chữ</b><code></code></div>
+        <div class="sw" data-v="--text-muted" style="background:var(--text-muted);color:var(--bg-solid)"><b>Chữ phụ</b><code></code></div>
+      </div>
+    </section>
+    <section class="type">
+      <div>
+        <div class="h">Chữ</div>
+        <div class="aa">Aa Ẩ</div>
+        <div class="fn" id="fn"></div>
+        <p class="dau">Ầ Ẫ Ậ Ẻ Ễ Ố Ỡ Ợ Ừ Ữ Ự ỳ ỹ đ Đ — 0123456789</p>
+      </div>
+      <div class="scale">
+        <p class="s4">Nhãn · 17px</p>
+        <p class="s1">Tiêu đề 56px</p>
+        <p class="s2">Phụ đề 36px</p>
+        <p class="s3">Thân chữ 26px — đọc rõ trên điện thoại, dòng không quá 40 ký tự.</p>
+      </div>
+    </section>
+    <section class="comp">
+      <span class="cta">[Đăng ký ngay]<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i></span>
+      <span class="chip"><em>15.10</em></span>
+      <div class="card bar"><p>Thẻ nội dung: <b>từ khóa nhấn</b> dùng màu nhấn, phần còn lại màu chữ thường.</p></div>
+    </section>
+  </main>
+</div>
+<script>
+// điền mã HEX + tên font từ tokens.css
+const cs=getComputedStyle(document.documentElement);
+const hex=c=>{const m=c.match(/\d+(\.\d+)?/g);if(!m||m.length<3)return c.trim();return '#'+m.slice(0,3).map(v=>(+v).toString(16).padStart(2,'0')).join('').toUpperCase()};
+document.querySelectorAll('.sw').forEach(el=>{const t=document.createElement('i');t.style.background=getComputedStyle(el).backgroundColor;
+  el.querySelector('code').textContent=hex(getComputedStyle(el).backgroundColor)});
+const f=s=>cs.getPropertyValue(s).split(',')[0].replace(/["']/g,'').trim();
+document.getElementById('fn').textContent='Tiêu đề: '+f('--font-display')+' · Thân: '+f('--font-body');
+</script>

@@ -1,5 +1,12 @@
 # Lịch sử phiên bản
 
+## v1.1.0 — 06/10/2026
+- Đổi tên hiển thị: **Design Lab — skill thiết kế ấn phẩm thương hiệu**.
+- Mới `references/xay-dung-brand-dna.md`: xây Brand DNA & hệ thị giác theo 2 lộ trình — **A. khai thác visual có sẵn** (gom tư liệu, trích xuất tự động, phân tích bằng mắt, bảng Giữ – Chuẩn hóa – Bỏ) và **B. xây từ đầu** (phỏng vấn lõi 8 câu, thang tính cách, nguyên mẫu, bảng dịch tính cách → màu/chữ/bố cục/ảnh, 3 hướng thị giác); quy tắc màu 60–30–10, chữ & cặp font Google có tiếng Việt, logo; đầu ra & checklist chốt DNA.
+- Mới `scripts/trich_xuat_brand.py`: trích bảng màu từ logo/ảnh cũ, dò màu nhấn theo điểm ảnh, gợi ý vai trò màu, tính tương phản, đo độ đồng nhất → `brand-audit.md` + `tokens-goi-y.css`.
+- Mới `brands/_mau/templates/brand-board.html` (1920×1080): bảng nhận diện tự đọc `tokens.css` — màu + HEX, font, chuỗi thử dấu, thang cỡ chữ, CTA, chip, thẻ, logo nền sáng/tối, tính cách.
+- `brand.md` mẫu thêm mục 0 "DNA lõi"; `SKILL.md` Bước 0 dẫn vào 2 lộ trình.
+
 ## v1.0.0 — 06/10/2026
 Bản công khai đầu tiên của **Design Lab** (`design-lab`): skill thiết kế ấn phẩm **đa thương hiệu**, không gắn với thương hiệu cụ thể nào — để mỗi người / mỗi đội tự thiết kế ảnh theo nhận diện của mình.
 

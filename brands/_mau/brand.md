@@ -5,6 +5,14 @@
 > Hướng dẫn chi tiết: `references/tao-brand-moi.md`.
 > Cập nhật lần cuối: [dd.mm.yyyy] · Người duyệt: [vai trò, không ghi thông tin liên hệ cá nhân]
 
+## 0. DNA lõi (xem `references/xay-dung-brand-dna.md`)
+- **Định vị**: [giúp ai – làm gì – khác biệt ở đâu]
+- **Lời hứa**: [khách hàng có được gì]
+- **Tính cách**: [3–5 tính từ] · **Không bao giờ là**: [2–3 tính từ]
+- **Thang tính cách** (1–5): cổ điển↔hiện đại [ ] · sang↔gần gũi [ ] · nghiêm↔vui [ ] · tối giản↔chi tiết [ ] · trầm↔rực [ ] · lý trí↔cảm xúc [ ]
+- **Nguyên mẫu** (tùy chọn): [chính] / [phụ]
+- **Hướng thị giác đã chọn**: [tên hướng + lý do, ngày duyệt] · Brand board: `templates/brand-board.html`
+
 ## 1. Nhận diện
 - **Tên thương hiệu / sản phẩm**: [tên đầy đủ] — cách ghi trên ấn phẩm: [đủ tên hay viết tắt? viết hoa thế nào?]
 - **Tagline**: [nguyên văn, có/không ngoặc kép]
@@ -45,6 +53,7 @@ Nhánh phụ (nếu có, vd sự kiện, dòng sản phẩm khác): [tên nhánh
 ## 6. Ấn phẩm và mẫu
 | Loại ấn phẩm | Khổ | Mẫu trong `templates/` | Ghi chú (CTA, thông tin bắt buộc) |
 |---|---|---|---|
+| Bảng nhận diện (duyệt DNA) | 16:9 1920×1080 | `brand-board.html` | tự đọc tokens.css; sửa ô [ ] |
 | Bài đăng 1 ảnh | 1:1 · 4:5 · 9:16 | `post-4x5.html` | [ ] |
 | Carousel / album | 1:1 | `carousel-01-1x1.html` | chỉ ảnh đầu có CTA |
 | Quảng cáo ảnh thật + CTA | 1:1 · 4:5 · 9:16 | `ad-cta-4x5.html` | [chữ trên nút] |
