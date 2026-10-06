@@ -94,11 +94,5 @@ python scripts/nap_tu_lieu.py --brand <ten-brand> "<đường dẫn tới file .
 
 Pack có bản mới (thêm mẫu, thêm ảnh, quy tắc mới)? Nhận file .zip mới và chạy lại lệnh trên — file mới ghi đè file cũ, file bạn tự thêm vẫn giữ.
 
-## Không có trong repo (cố ý)
-- Brand pack riêng của các đội (logo, ảnh, quy tắc nội bộ) — chia sẻ bằng .zip như trên.
-- Ảnh thật có khách / học viên / người ngoài (quyền riêng tư).
-- Mô hình LaMa (~200 MB) — tải theo `references/cong-cu-anh.md`.
-- Thông tin liên hệ, link form, ID kho ảnh / Drive, tài liệu nội bộ, thông tin đăng nhập.
-
 ## Giấy phép sử dụng
 Mã nguồn (HTML/CSS/script/tài liệu) dùng chung được. Logo, ảnh và nhận diện trong brand pack của bạn thuộc về thương hiệu của bạn.
