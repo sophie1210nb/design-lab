@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<title>Mẫu · Bài đăng 1 ảnh · 4:5</title>
+<!-- Mẫu trung tính: ảnh thông tin căn giữa (logo → tiêu đề → dòng nhấn → tagline → thẻ nội dung → thẻ thông tin).
+     Render: preview.sh post-4x5.html 1080 1350. Chữ trong [ ] là chỗ thay nội dung đã duyệt. -->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../../core/core.css">
+<style>
+.zone{align-items:center;text-align:center;gap:26px}
+.zone .logo{--logo-h:72px}
+h1.display{font-size:68px;margin-top:10px}
+.big{font-size:84px;line-height:1.05}
+.zone .tagline{max-width:860px}
+.zone .rule{width:70%;margin:6px 0}
+.points{width:100%;display:grid;gap:16px;text-align:left}
+.points .card{display:flex;gap:20px;align-items:flex-start}
+.points .card .n{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  background:var(--accent-fill);color:var(--on-accent);font-weight:800;font-size:22px}
+.post-logo{align-self:center}
+.points .card p{font-size:24px;line-height:1.45}
+.info{width:100%;text-align:left;margin-top:auto}
+</style>
+<div class="sheet s45">
+  <div class="zone">
+    <img class="logo" src="../assets/logo-mau.svg" alt="Logo">
+    <h1 class="display">[Tiêu đề ấn phẩm]</h1>
+    <div class="display big accent-text"><span class="wt">[Tên]</span> [chương trình]</div>
+    <p class="tagline">[Một câu tagline ngắn, đúng giọng thương hiệu]</p>
+    <div class="rule"></div>
+    <div class="points">
+      <div class="card bar"><span class="n">1</span><p><b class="kw">[TỪ KHÓA]</b> [ý chính thứ nhất, một câu ngắn đọc được trên điện thoại]</p></div>
+      <div class="card bar"><span class="n">2</span><p><b class="kw">[TỪ KHÓA]</b> [ý chính thứ hai]</p></div>
+      <div class="card bar"><span class="n">3</span><p><b class="kw">[TỪ KHÓA]</b> [ý chính thứ ba]</p></div>
+    </div>
+    <div class="info">
+      <div class="r1"><div class="chip"><em>[dd.mm.yyyy]</em></div><u>[Nhãn ngày]</u>
+        <p class="end"><b>[THÔNG TIN 1]</b>[mô tả ngắn]</p></div>
+      <div class="fx">
+        <div><strong>[MỤC A]</strong><span>[mô tả]</span></div>
+        <div><strong>[MỤC B]</strong><span>[mô tả]</span></div>
+        <div><strong>[MỤC C]</strong><span>[mô tả]</span></div>
+      </div>
+    </div>
+  </div>
+</div>

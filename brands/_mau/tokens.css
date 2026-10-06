@@ -1,0 +1,32 @@
+/* ============================================================
+   TOKENS — brand pack MẪU (_mau). Chép cả thư mục brands/_mau → brands/<ten-brand>,
+   rồi thay giá trị dưới đây bằng màu/font thật của thương hiệu (xem references/tao-brand-moi.md).
+   Font phải có đủ dấu tiếng Việt (Google Fonts: Be Vietnam Pro, Noto Serif, Lora, Playfair Display,
+   Montserrat, Inter, Noto Serif/Sans…).
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap");
+
+:root{
+  --font-display:"Noto Serif",Georgia,serif;          /* tiêu đề, hook */
+  --font-body:"Be Vietnam Pro",system-ui,sans-serif; /* thân chữ, nhãn, số liệu */
+
+  --bg:linear-gradient(170deg,#FFFFFF 0%,#F4F6FA 100%);
+  --bg-solid:#F4F6FA;
+  --bg-glow:radial-gradient(ellipse 900px 600px at 85% 0%,rgba(47,91,234,.10),rgba(47,91,234,0) 70%);
+
+  --text:#2A3142; --text-strong:#0E1320; --text-muted:#5B6475; --tagline:#3A4A75;
+
+  --accent:#2F5BEA;          /* màu nhấn chính */
+  --accent-soft:#2F5BEA;     /* nhãn, từ khoá */
+  --accent-text:linear-gradient(90deg,#2F5BEA 0%,#5B3FD9 100%);
+  --accent-fill:linear-gradient(90deg,#2F5BEA 0%,#3F6CF0 100%);
+  --on-accent:#FFFFFF;
+  --hairline:rgba(14,19,32,.12);
+
+  --surface:#FFFFFF; --surface-strong:rgba(255,255,255,.94); --surface-border:rgba(14,19,32,.10);
+  --shadow:0 14px 34px rgba(14,19,32,.10);
+  --overlay-rgb:14,19,32;     /* lớp phủ đọc chữ trên ảnh thật */
+
+  --radius:18px;
+  --margin:64px;
+}

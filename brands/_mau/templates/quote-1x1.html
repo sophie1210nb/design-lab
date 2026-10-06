@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<title>Mẫu · Thẻ trích dẫn · 1:1</title>
+<!-- Thẻ trích dẫn (quy-tac-social-post.md mục 8.1): dấu ngoặc lớn là điểm nhìn → câu trích ≤ 25–30 chữ, NGUYÊN VĂN, có nguồn
+     → ảnh tròn + tên + chức danh. Thay <div class="avatar"> bằng <img class="avatar" src="../assets/<ảnh>.jpg">.
+     Render: preview.sh quote-1x1.html 1080 1080 -->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../../core/core.css">
+<style>
+.zone{justify-content:center;gap:34px}
+.zone .logo{position:absolute;top:0;left:0;--logo-h:52px}
+.qmark{font-family:var(--font-display);font-weight:700;font-size:240px;line-height:1;height:110px;margin-top:40px;overflow:visible}
+.quote{font-size:54px;line-height:1.24;font-weight:600;max-width:900px}
+.who{display:flex;align-items:center;gap:24px;margin-top:6px}
+.avatar{flex:none;width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);
+  background:repeating-linear-gradient(135deg,rgba(127,127,127,.18) 0 12px,rgba(127,127,127,.06) 12px 24px)}
+.who .nm{display:block;font-size:30px;font-weight:800;color:var(--text-strong)}
+.who .tt{display:block;margin-top:4px;font-size:21px;color:var(--text-muted)}
+.src{position:absolute;left:var(--margin);right:var(--margin);bottom:56px;font-size:18px;color:var(--text-muted)}
+</style>
+<div class="sheet s11">
+  <div class="zone">
+    <img class="logo" src="../assets/logo-mau.svg" alt="Logo">
+    <div class="qmark accent-text">“</div>
+    <p class="display quote">[Câu trích nguyên văn, ngắn, một ý — tối đa khoảng 25–30&nbsp;chữ, có <span class="accent-text">phần&nbsp;nhấn</span>.]</p>
+    <div class="who"><div class="avatar"></div>
+      <div><span class="nm">[Họ tên người nói]</span><span class="tt">[Chức danh nguyên văn đã duyệt]</span></div></div>
+  </div>
+  <p class="src">[Nguồn: bài nói / sách / phỏng vấn, năm]</p>
+</div>

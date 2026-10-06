@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<title>Mẫu · Carousel · Ảnh 1 (bìa) · 1:1</title>
+<!-- Ảnh ĐẦU của carousel/album: hook mạnh nhất + .first-bar (tên chương trình + ngày + CTA).
+     Ảnh 2…N copy file này, BỎ .first-bar: không số trang, không vạch tiến trình, không "vuốt để xem".
+     Render: preview.sh carousel-01-1x1.html 1080 1080 -->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../../core/core.css">
+<style>
+.zone{gap:22px;bottom:170px;justify-content:center}
+.zone .logo,.zone .eyebrow{align-self:flex-start}
+.zone .logo{position:absolute;top:0;left:0}
+.zone .logo{--logo-h:60px}
+.hook{font-size:76px;line-height:1.1}
+.zone .body{max-width:880px;font-size:26px}
+</style>
+<div class="sheet s11">
+  <div class="zone">
+    <img class="logo" src="../assets/logo-mau.svg" alt="Logo">
+    <div class="eyebrow">[Nhãn chủ đề]</div>
+    <h1 class="display hook">[Câu hook của bộ ảnh,] <span class="accent-text">[phần nhấn]</span></h1>
+    <p class="body">[Một câu dẫn: vì sao người xem nên lướt tiếp. <b>[TỪ KHÓA]</b> in đậm màu nhấn.]</p>
+  </div>
+  <div class="first-bar"><div class="pg"><u>[Tên chương trình]</u><b>[Mốc ngày / lời mời ngắn]</b></div>
+    <span class="cta sm">[Đăng ký ngay]<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i></span></div>
+</div>

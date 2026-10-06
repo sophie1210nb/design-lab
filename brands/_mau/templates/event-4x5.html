@@ -1,0 +1,51 @@
+<meta charset="utf-8">
+<title>Mẫu · Thông báo sự kiện · 4:5</title>
+<!-- Sự kiện (quy-tac-social-post.md mục 8.3): nhãn → tên sự kiện (hero) → chủ đề → diễn giả → khối NGÀY · GIỜ · NƠI → CTA.
+     Ngày/giờ/nơi gom một khối; không ghi link họp, SĐT trên ảnh. Bài thường (không quảng cáo) có thể bỏ nút CTA.
+     Render: preview.sh event-4x5.html 1080 1350 -->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../../core/core.css">
+<style>
+.zone{gap:22px}
+.zone .logo{--logo-h:56px;margin-bottom:26px;align-self:flex-start}
+h1.display{font-size:84px;line-height:1.06}
+.topic{font-size:30px;line-height:1.4;max-width:900px}
+.speakers{display:flex;gap:40px;margin-top:18px}
+.sp{display:flex;align-items:center;gap:18px}
+.sp .av{flex:none;width:112px;height:112px;border-radius:50%;border:3px solid var(--accent);
+  background:repeating-linear-gradient(135deg,rgba(127,127,127,.18) 0 12px,rgba(127,127,127,.06) 12px 24px)}
+.sp b{display:block;font-size:24px;color:var(--text-strong)} .sp span{display:block;font-size:19px;color:var(--text-muted);margin-top:4px}
+.when{margin-top:auto;display:grid;grid-template-columns:auto 1fr;border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--surface-border);background:var(--surface-strong);box-shadow:var(--shadow)}
+.when .day{background:var(--accent-fill);color:var(--on-accent);padding:26px 38px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.when .day u{text-decoration:none;font-size:18px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.when .day em{font-family:var(--font-display);font-style:normal;font-weight:700;font-size:72px;line-height:1.05;margin-top:6px;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1,"onum" 0}
+.when .day i{font-style:normal;font-size:20px;font-weight:600;margin-top:4px}
+.when .meta{padding:22px 30px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.when .row{display:flex;gap:14px;align-items:baseline;font-size:25px;color:var(--text)}
+.when .row u{flex:none;width:64px;text-decoration:none;font-size:16px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-soft)}
+.when .row b{color:var(--text-strong)}
+.act{display:flex;justify-content:flex-end;margin-top:6px}
+</style>
+<div class="sheet s45">
+  <div class="zone">
+    <img class="logo" src="../assets/logo-mau.svg" alt="Logo">
+    <div class="eyebrow">[Nhãn: hội thảo / workshop / ra mắt]</div>
+    <h1 class="display">[Tên sự kiện ngắn,] <span class="accent-text">[phần&nbsp;nhấn]</span></h1>
+    <p class="topic">[Chủ đề / lời hứa của sự kiện trong một câu: người tham dự mang về điều&nbsp;gì.]</p>
+    <div class="speakers">
+      <div class="sp"><div class="av"></div><div><b>[Diễn giả 1]</b><span>[Chức danh nguyên văn]</span></div></div>
+      <div class="sp"><div class="av"></div><div><b>[Diễn giả 2]</b><span>[Chức danh nguyên văn]</span></div></div>
+    </div>
+    <div class="when">
+      <div class="day"><u>[Thứ …]</u><em>[dd.mm]</em><i>[yyyy]</i></div>
+      <div class="meta">
+        <div class="row"><u>Giờ</u><span><b>[hh:mm–hh:mm]</b></span></div>
+        <div class="row"><u>Nơi</u><span><b>[Địa điểm ngắn gọn / Trực tuyến]</b></span></div>
+        <div class="row"><u>Phí</u><span>[Miễn phí / mức phí — nếu brand cho phép ghi]</span></div>
+      </div>
+    </div>
+    <div class="act"><span class="cta">[Đăng ký ngay]<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i></span></div>
+  </div>
+</div>

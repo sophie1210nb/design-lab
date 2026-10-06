@@ -1,0 +1,30 @@
+# Brand pack riêng của từng đội (logo, ảnh, quy tắc nội bộ) — KHÔNG đưa lên repo công khai.
+# Chỉ giữ khung brands/_mau/. Pack riêng chia sẻ bằng .zip và cài bằng scripts/nap_tu_lieu.py.
+brands/*
+!brands/_mau/
+# Ảnh thật (có người ngoài) — kể cả trong _mau
+brands/*/assets/anh-that/*
+!brands/*/assets/anh-that/DOC-TOI.md
+# Đầu ra render (ở mọi cấp: output/, brands/<brand>/output/)
+output/
+**/output/
+*.skill.tmp
+# Gói brand pack / tư liệu tải về
+*.zip
+# Python
+__pycache__/
+*.pyc
+# Mô hình AI (tải riêng, ~200 MB)
+*.onnx
+# Dữ liệu riêng / bí mật
+*.xlsx
+drive_links.json
+rclone.conf
+*rclone*.conf
+.env
+*.env
+credentials*.json
+client_secret*.json
+token*.json
+*.pem
+*.key

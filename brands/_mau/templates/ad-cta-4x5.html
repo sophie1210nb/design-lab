@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<title>Mẫu · Quảng cáo ảnh thật + CTA · 4:5</title>
+<!-- Quảng cáo ảnh thật: hook ở trên (lớp phủ CHỈ sau chữ, không phủ mặt), người ở giữa,
+     đáy xếp chồng: lower-third → thẻ thông tin có CTA trong hàng đầu → hàng mục.
+     Thay .ph-empty bằng <img src="../assets/anh-that/<ảnh>.jpg"> (ảnh giữ nguyên màu; --zoom 1.15–1.25, --focus vào mặt).
+     9:16: đổi .sheet s45 → s916 và thêm class grid2 cho .fx khi có 4 mục.
+     Render: preview.sh ad-cta-4x5.html 1080 1350 -->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../../core/core.css">
+<style>
+.sheet{--text-strong:#FFFFFF;--wt-color:#FFFFFF}
+.photo{--zoom:1.15;--focus:50% 35%;background:#3A4356}
+.ov-top{--ov-h:34%} .ov-bottom{--ov-h:50%}
+.head{position:absolute;z-index:4;left:var(--margin);right:var(--margin);top:72px}
+.head .logo{--logo-h:56px;filter:brightness(0) invert(1)}
+.hook{font-size:66px;line-height:1.12;margin-top:26px}
+.stack{--stack-b:72px}
+.info{color:var(--text)}
+.info .r1 .cta{margin-left:auto}
+</style>
+<div class="sheet s45">
+  <div class="photo"><div class="ph-empty">[Ảnh thật — người ở giữa khung]</div></div>
+  <div class="ov-top"></div><div class="ov-bottom"></div>
+  <div class="head">
+    <img class="logo" src="../assets/logo-mau.svg" alt="Logo">
+    <h1 class="display hook">[Câu hook quảng cáo] <span class="accent-text">[phần nhấn]</span>?</h1>
+  </div>
+  <div class="stack">
+    <div class="lower-third"><span class="nm">[Họ tên người trong ảnh]</span><span class="tt">[Chức danh đúng nguyên văn đã duyệt]</span></div>
+    <div class="info">
+      <div class="r1"><div class="chip"><em>[dd.mm.yyyy]</em></div><u>[Nhãn ngày]</u>
+        <span class="cta sm">[Đăng ký ngay]<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i></span></div>
+      <div class="fx">
+        <div><strong>[MỤC A]</strong><span>[mô tả]</span></div>
+        <div><strong>[MỤC B]</strong><span>[mô tả]</span></div>
+        <div><strong>[MỤC C]</strong><span>[mô tả]</span></div>
+      </div>
+    </div>
+  </div>
+</div>

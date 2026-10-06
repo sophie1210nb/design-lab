@@ -1,0 +1,145 @@
+/* ============================================================
+   CORE — thành phần dùng chung, KHÔNG gắn thương hiệu.
+   Màu/font lấy từ biến CSS do tokens.css của từng brand pack khai báo.
+   Thứ tự link trong mẫu:  ../tokens.css  →  ../../../core/core.css  →  <style> cục bộ
+   Gồm: tờ theo khổ, chữ, logo, thẻ, chip ruy-băng, nút CTA, ảnh thật + lớp phủ,
+   khối đáy xếp chồng, lower-third, thẻ thông tin, khối ảnh đầu carousel, tên hai màu .wt.
+   ============================================================ */
+
+/* ---------- Giá trị mặc định (brand pack ghi đè trong tokens.css) ---------- */
+:where(:root){   /* độ ưu tiên 0: tokens.css luôn thắng dù link trước */
+  --font-display:Georgia,serif;
+  --font-body:system-ui,sans-serif;
+  --bg:#FFFFFF; --bg-solid:#FFFFFF; --bg-glow:none;
+  --text:#1C2230; --text-strong:#0E1320; --text-muted:#5B6475; --tagline:#5B6475;
+  --accent:#2F5BEA; --accent-soft:#2F5BEA;
+  --accent-text:linear-gradient(90deg,#2F5BEA,#2F5BEA);
+  --accent-fill:linear-gradient(90deg,#2F5BEA,#2F5BEA);
+  --on-accent:#FFFFFF;
+  --hairline:rgba(0,0,0,.12);
+  --surface:#FFFFFF; --surface-strong:#FFFFFF; --surface-border:rgba(0,0,0,.10);
+  --shadow:0 12px 30px rgba(0,0,0,.10);
+  --overlay-rgb:0,0,0;
+  --radius:16px;
+  --margin:64px;
+}
+
+/* ---------- Tờ (khổ) ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg-solid)}
+body{font-family:var(--font-body);color:var(--text);-webkit-font-smoothing:antialiased}
+.sheet{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--bg);color:var(--text)}
+.sheet::before{content:"";position:absolute;inset:0;background:var(--bg-glow);pointer-events:none;z-index:0}
+.sheet.s11{height:1080px} .sheet.s45{height:1350px} .sheet.s916{height:1920px} .sheet.s12{height:2160px}
+.sheet.s21{width:2160px;height:1080px}
+.sheet.cover{width:1640px;height:624px}          /* ảnh bìa Facebook */
+.sheet.a4{width:1240px;height:1754px}            /* A4 dọc @150dpi → render SCALE=2 = 300dpi */
+.sheet.a5{width:874px;height:1240px}             /* A5 dọc @150dpi */
+.sheet.slide169{width:1920px;height:1080px}      /* slide 16:9 */
+.abs{position:absolute}
+/* lưới xem vùng an toàn khi dựng (thêm class .show-safe vào .sheet; BỎ trước khi render bản giao) */
+.show-safe::after{content:"";position:absolute;inset:0;z-index:99;pointer-events:none;
+  background:linear-gradient(rgba(255,0,80,.18),rgba(255,0,80,.18)) top/100% var(--safe-t,0) no-repeat,
+             linear-gradient(rgba(255,0,80,.18),rgba(255,0,80,.18)) bottom/100% var(--safe-b,0) no-repeat,
+             linear-gradient(rgba(255,0,80,.18),rgba(255,0,80,.18)) right/var(--safe-r,0) 100% no-repeat;
+  outline:2px dashed rgba(255,0,80,.7);outline-offset:calc(-1 * var(--margin))}
+.s916.show-safe{--safe-t:250px;--safe-b:340px}
+.s916.show-safe.reels{--safe-b:520px;--safe-r:130px}
+
+/* vùng an toàn: dùng .zone để giữ nội dung trong lề */
+.zone{position:absolute;inset:var(--margin);display:flex;flex-direction:column}
+.s916 .zone{top:250px;bottom:340px}               /* chừa giao diện story: 250 trên, 340 dưới */
+.cover .zone{left:266px;right:266px;top:40px;bottom:40px} /* vùng 16:9 điện thoại */
+
+/* ---------- Chữ ---------- */
+.display{font-family:var(--font-display);font-weight:700;line-height:1.08;color:var(--text-strong);
+  letter-spacing:-.005em;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1,"onum" 0}
+.accent-text{background:var(--accent-text);-webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-fill-color:transparent;padding-bottom:.06em}
+/* tên hai màu: bọc phần màu thường trong dòng chữ nhấn */
+.wt{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;
+  color:var(--wt-color,var(--text-strong))!important;-webkit-text-fill-color:var(--wt-color,var(--text-strong))!important;filter:none}
+.eyebrow{font-size:17px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-soft)}
+.tagline{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:30px;line-height:1.35;color:var(--tagline)}
+.body{font-size:24px;line-height:1.5;color:var(--text)}
+.body b,.kw{font-weight:800;color:var(--accent-soft)}
+.muted{color:var(--text-muted)}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.7}
+.num{font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"onum" 0}
+
+/* ---------- Logo ---------- */
+.logo{display:block;height:var(--logo-h,64px);width:auto}
+
+/* ---------- Thẻ ---------- */
+.card{position:relative;border-radius:var(--radius);background:var(--surface);border:1px solid var(--surface-border);
+  box-shadow:var(--shadow);padding:24px 28px}
+.card.bar::before{content:"";position:absolute;left:-1px;top:18px;bottom:18px;width:3px;border-radius:2px;
+  background:linear-gradient(180deg,transparent,var(--accent),transparent)}
+
+/* ---------- Chip ruy-băng (ngày, nhãn) ---------- */
+.chip{display:inline-flex;align-items:center;height:var(--chh,52px);padding:0 34px 0 18px;background:var(--accent-fill);
+  color:var(--on-accent);clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%)}
+.chip em{font-family:var(--font-display);font-style:normal;font-weight:700;font-size:var(--chf,32px);
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1,"onum" 0}
+.tag-pill{display:inline-block;font-size:15px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  padding:6px 14px;border:1px solid var(--accent);border-radius:4px;color:var(--accent-soft)}
+
+/* ---------- Nút CTA (pill) ---------- */
+.cta{display:inline-flex;align-items:center;gap:16px;height:var(--cth,72px);padding:0 10px 0 34px;border-radius:999px;
+  background:var(--accent-fill);color:var(--on-accent);font-weight:800;font-size:var(--ctf,24px);letter-spacing:.12em;
+  text-transform:uppercase;white-space:nowrap;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.cta i{display:grid;place-items:center;width:calc(var(--cth,72px) - 20px);height:calc(var(--cth,72px) - 20px);
+  border-radius:50%;background:var(--on-accent);color:var(--cta-arrow,var(--accent))}
+.cta i svg{width:55%;height:55%}
+.cta.sm{--cth:60px;--ctf:20px}
+.cta.lg{--cth:84px;--ctf:30px}
+
+/* ---------- Ảnh thật + lớp đọc chữ ---------- */
+/* Quy tắc: ảnh giữ nguyên màu; lớp phủ CHỈ ở phía có chữ, mờ hết trước mặt người. */
+.photo{position:absolute;inset:0;overflow:hidden;z-index:0}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--focus,50% 30%);
+  transform:scale(var(--zoom,1));transform-origin:var(--focus,50% 30%)}
+.photo .ph-empty{position:absolute;inset:0;display:grid;place-items:center;font-size:26px;color:var(--text-muted);
+  background:repeating-linear-gradient(135deg,rgba(127,127,127,.10) 0 24px,rgba(127,127,127,.04) 24px 48px)}
+.ov-top{position:absolute;left:0;right:0;top:0;height:var(--ov-h,40%);z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(var(--overlay-rgb),.96) 0%,rgba(var(--overlay-rgb),.75) 55%,rgba(var(--overlay-rgb),0) 100%)}
+.ov-bottom{position:absolute;left:0;right:0;bottom:0;height:var(--ov-h,46%);z-index:1;pointer-events:none;
+  background:linear-gradient(0deg,rgba(var(--overlay-rgb),.96) 0%,rgba(var(--overlay-rgb),.85) 50%,rgba(var(--overlay-rgb),0) 100%)}
+.frame{position:absolute;inset:30px;z-index:3;border:1px solid var(--hairline);pointer-events:none}
+
+/* ---------- Khối đáy xếp chồng (ads ảnh thật) ---------- */
+.stack{position:absolute;z-index:4;left:var(--margin);right:var(--margin);bottom:var(--stack-b,64px);
+  display:flex;flex-direction:column;gap:var(--gap,16px)}
+/* lower-third: chữ trắng cạnh người, không hộp */
+.lower-third .nm{display:block;font-size:var(--ltn,32px);font-weight:700;color:var(--text-strong);line-height:1.15;
+  text-shadow:0 2px 14px rgba(var(--overlay-rgb),.85)}
+.lower-third .tt{display:block;margin-top:6px;font-size:var(--ltt,19px);color:var(--text-strong);
+  text-shadow:0 2px 12px rgba(var(--overlay-rgb),.85)}
+
+/* ---------- Thẻ thông tin (chip + nhãn + CTA/ghi chú | hàng mục) ---------- */
+.info{position:relative;border-radius:var(--radius);padding:var(--icp,18px 24px 16px);background:var(--surface-strong);
+  border:1px solid var(--surface-border);box-shadow:var(--shadow)}
+.info .r1{display:flex;align-items:center;gap:16px}
+.info .r1 u{text-decoration:none;font-size:var(--kgf,15px);font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent-soft);white-space:nowrap}
+.info .r1 .end{margin-left:auto;text-align:right;font-size:var(--r1f,18px);line-height:1.35}
+.info .r1 .end b{display:block;font-weight:800;color:var(--accent-soft)}
+.info .fx{display:flex;margin-top:var(--fxm,14px);padding-top:var(--fxm,14px);border-top:1px solid var(--hairline)}
+.info .fx > div{flex:1 1 0;text-align:center;padding:0 6px}
+.info .fx > div + div{border-left:1px solid var(--hairline)}
+.info .fx strong{display:block;font-size:var(--fxs,19px);font-weight:800;color:var(--accent-soft);white-space:nowrap}
+.info .fx span{display:block;margin-top:3px;font-size:var(--fxt,15px);line-height:1.3}
+/* 9:16 hoặc thẻ hẹp: 4 mục xếp lưới 2×2 */
+.info .fx.grid2{display:grid;grid-template-columns:1fr 1fr;row-gap:16px}
+.info .fx.grid2 > div{padding:6px 10px}
+.info .fx.grid2 > div + div{border-left:0}
+.info .fx.grid2 > div:nth-child(even){border-left:1px solid var(--hairline)}
+.info .fx.grid2 > div:nth-child(n+3){border-top:1px solid var(--hairline);padding-top:16px}
+
+/* ---------- Carousel / album ---------- */
+/* Quy tắc: không số trang, không vạch tiến trình, không "vuốt để xem"; chỉ ảnh ĐẦU có .first-bar */
+.first-bar{position:absolute;z-index:5;left:var(--margin);right:var(--margin);bottom:var(--fb-b,48px);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 12px 12px 32px;border-radius:999px;
+  background:var(--surface-strong);border:1px solid var(--surface-border);box-shadow:var(--shadow)}
+.first-bar .pg u{display:block;text-decoration:none;font-size:15px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-soft)}
+.first-bar .pg b{display:block;margin-top:8px;font-size:26px;font-weight:700;color:var(--text-strong)}

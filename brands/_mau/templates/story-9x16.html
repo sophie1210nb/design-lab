@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<title>Mẫu · Story 9:16 · có lưới vùng an toàn</title>
+<!-- Story / reels 9:16 (quy-tac-social-post.md mục 2.1): nội dung trong .zone = y 250–1580.
+     Class show-safe trên .sheet hiện lưới hồng (250 px trên, 340 px dưới; thêm class "reels" để thấy đáy chú thích + cột phải).
+     XÓA "show-safe" trước khi render bản giao. Render: preview.sh story-9x16.html 1080 1920 -->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../../core/core.css">
+<style>
+.zone{gap:30px;justify-content:center}
+.zone .logo{--logo-h:64px;position:absolute;top:0;left:0}
+.hook{font-size:96px;line-height:1.08}
+.zone .body{font-size:32px;max-width:880px}
+.photo-box{position:relative;height:520px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--surface-border)}
+.photo-box .ph-empty{position:absolute;inset:0;display:grid;place-items:center;font-size:28px;color:var(--text-muted);
+  background:repeating-linear-gradient(135deg,rgba(127,127,127,.14) 0 24px,rgba(127,127,127,.05) 24px 48px)}
+.zone .cta{align-self:flex-start}
+</style>
+<div class="sheet s916 show-safe">
+  <div class="zone">
+    <img class="logo" src="../assets/logo-mau.svg" alt="Logo">
+    <div class="eyebrow">[Nhãn ngắn]</div>
+    <h1 class="display hook">[Hook 6–10 chữ] <span class="accent-text">[phần&nbsp;nhấn]</span></h1>
+    <p class="body">[Một câu dẫn ngắn. <b>[TỪ KHÓA]</b> màu nhấn.]</p>
+    <div class="photo-box"><div class="ph-empty">[Ảnh / hình minh họa — mặt người không vào vùng hồng]</div></div>
+    <span class="cta lg">[Xem chi tiết]<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i></span>
+  </div>
+</div>

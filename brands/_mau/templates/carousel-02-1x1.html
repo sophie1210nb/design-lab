@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<title>Mẫu · Carousel · Ảnh nội dung (2…N) · 1:1</title>
+<!-- Ảnh nội dung của carousel (quy-tac-social-post.md mục 9): MỘT ý mỗi ảnh. Cùng lề, cùng vị trí logo với ảnh bìa.
+     KHÔNG có .first-bar / CTA / số trang / vạch tiến trình / "vuốt để xem" (kiểu "ảnh sạch" mặc định).
+     Render: preview.sh carousel-02-1x1.html 1080 1080 -->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../../core/core.css">
+<style>
+.zone{gap:30px;justify-content:center}
+.zone .logo{position:absolute;top:0;left:0;--logo-h:60px}
+.step{display:flex;align-items:center;gap:24px}
+.step .n{flex:none;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:var(--accent-fill);
+  color:var(--on-accent);font-weight:800;font-size:34px}
+.step h2{font-size:58px;line-height:1.12}
+.zone .body{font-size:28px;max-width:900px}
+.card.bar p{font-size:26px;line-height:1.45}
+.card.bar .kw{display:block;font-size:17px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
+</style>
+<div class="sheet s11">
+  <div class="zone">
+    <img class="logo" src="../assets/logo-mau.svg" alt="Logo">
+    <div class="step"><span class="n">2</span><h2 class="display">[Ý chính của ảnh này]</h2></div>
+    <p class="body">[Giải thích 2–3 dòng, câu ngắn. <b>[TỪ KHÓA]</b> in đậm màu nhấn ở đầu ý quan trọng.]</p>
+    <div class="card bar"><p><b class="kw">Ví dụ</b>[Một ví dụ cụ thể / con số có nguồn / bước làm ngay được.]</p></div>
+  </div>
+</div>
